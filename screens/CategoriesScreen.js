@@ -12,12 +12,15 @@ import { CATEGORIES } from "../data/data";
 import Colors from "../constants/Colors";
 
 const CategoriesScreen = (props) => {
+ 
   const renderGridITem = (itemData) => {
     return (
       <TouchableOpacity
         style={styles.gridItem}
         onPress={() => {
-          props.navigation.navigate({ routeName: "CategoryMeals" });
+          props.navigation.navigate({ routeName: "CategoryMeals",params: {
+            categoryId: itemData.item.id
+          } });
         }}
       >
         <View>
